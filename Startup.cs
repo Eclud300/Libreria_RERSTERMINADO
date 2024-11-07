@@ -1,3 +1,4 @@
+using Libreria_RERS.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,14 +12,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.EntityFrameworkCore;
 
 namespace Libreria_RERS
 {
     public class Startup
     {
+        public string ConnectionString { get; set; }
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            ConnectionString = Configuration.GetConnectionString("DefaultConnectionString");
         }
 
         public IConfiguration Configuration { get; }
@@ -28,10 +33,12 @@ namespace Libreria_RERS
         {
 
             services.AddControllers();
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
             services.AddSwaggerGen(c =>
-            {
+            { 
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Libreria_RERS", Version = "v1" });
-            });
+        });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +61,7 @@ namespace Libreria_RERS
             {
                 endpoints.MapControllers();
             });
+            AppDbInitializer.Seed(app);
         }
     }
 }
