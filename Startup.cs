@@ -14,6 +14,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore;
+using Libreria_RERS.Data.Services;
 
 namespace Libreria_RERS
 {
@@ -34,6 +35,11 @@ namespace Libreria_RERS
 
             services.AddControllers();
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
+
+
+            //configurar el servicio para que pueda ser usado
+
+            services.AddTransient<BooksService>();
             services.AddSwaggerGen(c =>
             { 
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Libreria_RERS", Version = "v1" });
