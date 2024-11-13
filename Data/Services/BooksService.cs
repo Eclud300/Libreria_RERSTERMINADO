@@ -1,6 +1,9 @@
 ﻿using Libreria_RERS.Data.Models;
 using Libreria_RERS.Data.ViewModels;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 
 namespace Libreria_RERS.Data.Services
 {
@@ -8,7 +11,7 @@ namespace Libreria_RERS.Data.Services
     {
         private AppDbContext _context;
 
-        public BooksService (AppDbContext context)
+        public BooksService(AppDbContext context)
         {
             _context = context;
 
@@ -32,8 +35,34 @@ namespace Libreria_RERS.Data.Services
 
             _context.Books.Add(_book);
             _context.SaveChanges();
-             
 
+
+        }
+
+        public List<Books> GetAllBks() => _context.Books.ToList();
+
+        public Books GetBookById(int bookid) => _context.Books.FirstOrDefault(n => n.Id == bookid);
+
+        //Metodo que nos permite modificar un libro que se encuentra en la BD 
+
+        public Books UpdateBookByID(int bookid, BookVM book)
+        {
+            var _book = _context.Books.FirstOrDefault(n => n.Id == bookid);
+            if (_book != null )
+            {
+                _book.Titulo = book.Titulo;
+                _book.Descripcion = book.Descripcion;
+                _book.IsRead = book.IsRead;
+                _book.DateRead = book.DateRead;
+                _book.Rate = book.Rate;
+                _book.Genero = book.Genero;
+                _book.Autor = book.Autor;
+                _book.CoverUrl = book.CoverUrl;
+               
+                _context.SaveChanges();
+
+            }
+            return _book;
         }
 
 
