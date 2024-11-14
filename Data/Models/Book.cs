@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Libreria_RERS.Data.Models
 {
@@ -24,5 +25,12 @@ namespace Libreria_RERS.Data.Models
 
         public DateTime DateAdded { get; set; }
 
+        //propiedades de navegacion
+
+        public int PublisherId { get; set; }
+
+        public Publisher Publisher { get; set; }
+
+        public List<Book_Author> Book_Authors { get; set; }
     }
 }
