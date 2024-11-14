@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cd18\\Documents\\Nueva carpeta (10)\\Libreria_RERS\\Libreria_RERS.csproj": {}
+    "C:\\Users\\cd18\\Documents\\Nueva carpeta (10)parte3.8\\Nueva carpeta (10)\\Libreria_RERS\\Libreria_RERS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cd18\\Documents\\Nueva carpeta (10)\\Libreria_RERS\\Libreria_RERS.csproj": {
+    "C:\\Users\\cd18\\Documents\\Nueva carpeta (10)parte3.8\\Nueva carpeta (10)\\Libreria_RERS\\Libreria_RERS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cd18\\Documents\\Nueva carpeta (10)\\Libreria_RERS\\Libreria_RERS.csproj",
+        "projectUniqueName": "C:\\Users\\cd18\\Documents\\Nueva carpeta (10)parte3.8\\Nueva carpeta (10)\\Libreria_RERS\\Libreria_RERS.csproj",
         "projectName": "Libreria_RERS",
-        "projectPath": "C:\\Users\\cd18\\Documents\\Nueva carpeta (10)\\Libreria_RERS\\Libreria_RERS.csproj",
+        "projectPath": "C:\\Users\\cd18\\Documents\\Nueva carpeta (10)parte3.8\\Nueva carpeta (10)\\Libreria_RERS\\Libreria_RERS.csproj",
         "packagesPath": "C:\\Users\\cd18\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cd18\\Documents\\Nueva carpeta (10)\\Libreria_RERS\\obj\\",
+        "outputPath": "C:\\Users\\cd18\\Documents\\Nueva carpeta (10)parte3.8\\Nueva carpeta (10)\\Libreria_RERS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

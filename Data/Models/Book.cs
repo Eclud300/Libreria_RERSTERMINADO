@@ -4,7 +4,7 @@ namespace Libreria_RERS.Data.Models
 {
     public class Books
     {
-        public int Id { get; set; }
+        public int id { get; set; }
 
         public string Titulo { get; set; }
 

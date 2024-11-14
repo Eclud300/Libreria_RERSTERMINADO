@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9tzHDUUPiYs4h28Tcpwfj986aImXQCuzwmSdChL/JISDvz8qjKZcrUZLkaoU8bPzpeYEG4vDCISCy/hfJCGMEw==",
+  "dgSpecHash": "Xwz/frjymsIWHxjWFJmAYnVduFAyhXS/Jy5WCIRTDaxoaN0T/2K+lILz93SNxuEqwo1tTbZ6opDS/8HzvU9Qew==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cd18\\Documents\\Nueva carpeta (10)\\Libreria_RERS\\Libreria_RERS.csproj",
+  "projectFilePath": "C:\\Users\\cd18\\Documents\\Nueva carpeta (10)parte3.8\\Nueva carpeta (10)\\Libreria_RERS\\Libreria_RERS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cd18\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\cd18\\.nuget\\packages\\microsoft.applicationinsights\\2.15.0\\microsoft.applicationinsights.2.15.0.nupkg.sha512",

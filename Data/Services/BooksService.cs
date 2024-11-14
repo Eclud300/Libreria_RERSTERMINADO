@@ -41,13 +41,13 @@ namespace Libreria_RERS.Data.Services
 
         public List<Books> GetAllBks() => _context.Books.ToList();
 
-        public Books GetBookById(int bookid) => _context.Books.FirstOrDefault(n => n.Id == bookid);
+        public Books GetBookById(int bookid) => _context.Books.FirstOrDefault(n => n.id == bookid);
 
         //Metodo que nos permite modificar un libro que se encuentra en la BD 
 
         public Books UpdateBookByID(int bookid, BookVM book)
         {
-            var _book = _context.Books.FirstOrDefault(n => n.Id == bookid);
+            var _book = _context.Books.FirstOrDefault(n => n.id == bookid);
             if (_book != null )
             {
                 _book.Titulo = book.Titulo;
@@ -65,6 +65,17 @@ namespace Libreria_RERS.Data.Services
             return _book;
         }
 
+        public void DeleteBookById(int bookid)
+        {
+            var _book = _context.Books.FirstOrDefault(n => n.id == bookid);
+            if (_book != null )
+            {
+                _context.Books.Remove( _book ); 
+                _context.SaveChanges();
+
+            }
+
+        }
 
     }
 }
