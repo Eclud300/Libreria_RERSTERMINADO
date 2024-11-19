@@ -40,6 +40,11 @@ namespace Libreria_RERS
             //configurar el servicio para que pueda ser usado
 
             services.AddTransient<BooksService>();
+
+            services.AddTransient<AuthorsService>();
+
+            services.AddTransient<PublishersService>();
+
             services.AddSwaggerGen(c =>
             { 
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Libreria_RERS", Version = "v1" });
@@ -67,7 +72,7 @@ namespace Libreria_RERS
             {
                 endpoints.MapControllers();
             });
-            AppDbInitializer.Seed(app);
+            //AppDbInitializer.Seed(app);
         }
     }
 }
