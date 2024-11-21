@@ -29,14 +29,14 @@ namespace Libreria_RERS.Controllers
         [HttpGet("get-book-by-id/{id}")]
         public IActionResult GetBookById(int id)
         {
-            var allbooks = _booksService.GetBookById(id);
-            return Ok(allbooks);
+            var book = _booksService.GetBookById(id);
+            return Ok(book);
         }
-        [HttpPost("add-book")]
+        [HttpPost("add-book-with-authors")]
 
         public IActionResult AddBook([FromBody] BookVM book)
         {
-            _booksService.AddBook(book);
+            _booksService.AddBookWithAuthors(book);
             return Ok();
 
         }
