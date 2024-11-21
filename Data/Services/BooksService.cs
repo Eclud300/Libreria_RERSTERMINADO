@@ -17,7 +17,7 @@ namespace Libreria_RERS.Data.Services
 
         }
 
-        public void AddBook(BookVM book)
+        public void AddBookWithAuthors(BookVM book)
         {
             var _book = new Books()
             {
@@ -27,21 +27,52 @@ namespace Libreria_RERS.Data.Services
                 DateRead = book.DateRead,
                 Rate = book.Rate,
                 Genero = book.Genero,
-                Autor = book.Autor,
                 CoverUrl = book.CoverUrl,
-                DateAdded = DateTime.Now
+                DateAdded = DateTime.Now,
+                PublisherId = book.PublisherID
 
             };
 
             _context.Books.Add(_book);
             _context.SaveChanges();
 
+            foreach (var id in book.AutorIDs)
+            {
+                var _book_author = new Book_Author()
+                {
+                    BookId = _book.id,
+                    AuthorId = id
+
+                };
+
+                _context.Book_Authors.Add(_book_author);
+                _context.SaveChanges();
+            }
+
 
         }
 
         public List<Books> GetAllBks() => _context.Books.ToList();
 
-        public Books GetBookById(int bookid) => _context.Books.FirstOrDefault(n => n.id == bookid);
+        public BookWithAuthorsVM GetBookById(int bookid) 
+        {
+            var _bookWithAuthors = _context.Books.Where(n => n.id == bookid).Select(book => new BookWithAuthorsVM()
+            {
+                Titulo = book.Titulo,
+                Descripcion = book.Descripcion,
+                IsRead = book.IsRead,
+                DateRead = book.DateRead,
+                Rate = book.Rate,
+                Genero = book.Genero,
+                CoverUrl = book.CoverUrl,
+
+                PublisherName = book.Publisher.Name,
+                AutorNames = book.Book_Authors.Select(n => n.Author.FullName).ToList()
+
+            }).FirstOrDefault();
+            return _bookWithAuthors;
+            
+        }
 
         //Metodo que nos permite modificar un libro que se encuentra en la BD 
 
@@ -56,7 +87,6 @@ namespace Libreria_RERS.Data.Services
                 _book.DateRead = book.DateRead;
                 _book.Rate = book.Rate;
                 _book.Genero = book.Genero;
-                _book.Autor = book.Autor;
                 _book.CoverUrl = book.CoverUrl;
                
                 _context.SaveChanges();

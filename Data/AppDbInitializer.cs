@@ -26,7 +26,6 @@ namespace Libreria_RERS.Data
                         DateRead = DateTime.Now.AddDays(-10),
                         Rate = 4,
                         Genero = "Biography",
-                        Autor = "1st Author",
                         CoverUrl = "Https...",
                         DateAdded = DateTime.Now,
 
@@ -37,7 +36,6 @@ namespace Libreria_RERS.Data
                         Descripcion = "2nd Book Description",
                         IsRead = true,   
                         Genero = "Biography",
-                        Autor = "2nd Author",
                         CoverUrl = "Https...",
                         DateAdded = DateTime.Now,
 

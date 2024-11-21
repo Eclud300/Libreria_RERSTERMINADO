@@ -19,7 +19,6 @@ namespace Libreria_RERS.Data.Models
 
         public string Genero { get; set; }
 
-        public string Autor { get; set; }
 
         public string CoverUrl { get; set; }
 
